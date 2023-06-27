@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Image</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #fed8b1; /* Set a light background color for the body */
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #fff; /* Set a white background color for the card */
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .card:hover{
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s, transform 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Upload an Image</h3>
+            <form action="/detect_colors/" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="form-group" style="display: inline-block;">
+                <label for="image" style="display:inline-block;">Select an image:</label>
+                <input type="file" name="image" id="image" class="form-control-file">
+              </div>
+              <button type="submit" class="btn btn-success">Upload</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Include Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
